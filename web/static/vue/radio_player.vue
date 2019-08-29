@@ -82,20 +82,21 @@
 <style lang="scss">
 .radio-player-widget {
     .now-playing-details {
-        display: flex;
+        display: inline-block;
         align-items: center;
+	min-width:100%;
+	margin-left: auto;
+	margin-right: auto;
 
         .now-playing-art {
-            padding-right: .5rem;
+            min-width: 100%;
 
             img {
-                width: 75px;
+                min-width: 100%;
                 height: auto;
-                border-radius: 5px;
+                
 
-                @media (max-width:575px) {
-                    width: 50px;
-                }
+                
             }
         }
         .now-playing-main {
@@ -108,11 +109,15 @@
             line-height: 1.3;
         }
         h4 {
-            font-size: 15px;
+            font-size: 30px;
+	    text-transform: uppercase;
+	    text-align: center;
         }
         h5 {
-            font-size: 13px;
+            font-size: 18px;
             font-weight: normal;
+	    text-transform: uppercase;
+		
         }
         h6 {
             font-size: 11px;
@@ -122,18 +127,13 @@
         .now-playing-title,
         .now-playing-artist {
             text-overflow: ellipsis;
-            overflow: hidden;
-            white-space: nowrap;
-
-            &:hover {
-                text-overflow: clip;
-                white-space: normal;
-                word-break: break-all;
-            }
+            overflow: visible;
+            white-space: normal;
         }
 
         .time-display {
-            font-size: 10px;
+            font-size: 20px;
+	    padding: 5px;
             margin-top: .25rem;
             flex-direction: row;
             align-items: center;
@@ -160,16 +160,23 @@
     hr {
         margin-top: .5rem;
         margin-bottom: .5rem;
+	display:none;
     }
 
     i.material-icons {
         line-height: 1;
+	font-size: 75px;
+	color: #ffffff
     }
 
     .radio-controls {
         display: flex;
-        flex-direction: row;
-        align-items: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
 
         .radio-control-play-button {
             margin-right: .25rem;
@@ -181,11 +188,13 @@
         .radio-control-mute-button,
         .radio-control-max-volume-button {
             flex-shrink: 0;
+	    display: none;
         }
 
         .radio-control-volume-slider {
             flex: 1 1 auto;
             max-width: 30%;
+	    display:none;
 
             input {
                 height: 10px;
